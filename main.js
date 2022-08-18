@@ -1,10 +1,14 @@
+const { default: axios } = require("axios");
+
 console.log('connected');
 
-const resBtn = document.querySelector("residents-button");
+const resBtn = document.querySelector("#residents-button");
+const text = document.querySelector()
 
-function requestSubmit(e){
-    e.preventDefault()
-    
-   console.log()
+function requestSubmit(){
+   axios.get("https://swapi.dev/api/planets/?search=alderaan")
+   .then((response)=>{
+
+   });
 }
-// resBtn.addEventListener("click",submitRequest);
+// .addEventListener("click",submitRequest);
