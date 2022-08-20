@@ -1,14 +1,32 @@
-const { default: axios } = require("axios");
+const axios = require ('axios')
 
 console.log('connected');
 
-const resBtn = document.querySelector("#residents-button");
-const text = document.querySelector()
+const swapiBtn = document.querySelector("#swapi-button");
+const sectionText = document.querySelector("#url-text");
 
-function requestSubmit(){
+const getResidents =() =>axios.get("https://swapi.dev/api").then(swapiBtn).catch(err)
+
+
+function submitRequest(){
    axios.get("https://swapi.dev/api/planets/?search=alderaan")
    .then((response)=>{
 
+      const residentsArr = response.data.results[0].residents;
+      for (let i = 0; i< residentsArr.length; i++){
+         console.log(residentsArr[i]);
+
+         axios.get(residentsArr[i])
+         .then((response)=>{
+           
+            console.log(response.data)
+         })
+      }
    });
+
+
+
+  
+
 }
-// .addEventListener("click",submitRequest);
+swapiBtn.addEventListener("click",submitRequest);

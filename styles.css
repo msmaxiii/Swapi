@@ -1,5 +1,7 @@
 body{
     background-color:rgb(229, 221, 236)
+    
+
 }
 button{
 
@@ -7,4 +9,8 @@ button{
     color:black ;
     border: 2px solid purple;
     
+    
+}
+h2{
+    text-align: center;
 }
